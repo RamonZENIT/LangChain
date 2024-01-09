@@ -1,0 +1,14 @@
+#INICIO
+#Prompts and LLms
+
+from langchain.llms import OpenAI
+
+# temperatura entre 0 e 1, 0 repete sempre a mesma coisa, 1 é mais criativo
+#Padrão OpenAI model é text-davinci-003
+llm = OpenAI(temperature=0)
+prompt = "What would a good company name be for a company that makes colorful socks?"
+
+result = llm.generate([prompt]*5)
+for company_name in result.generations:
+  print(company_name[0].text)
+#FIM
