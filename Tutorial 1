@@ -1,6 +1,9 @@
 #INICIO
 #Prompts and LLms
 
+import os
+os.environ['OPENAI_API_KEY'] = ""
+
 from langchain.llms import OpenAI
 
 # temperatura entre 0 e 1, 0 repete sempre a mesma coisa, 1 é mais criativo
