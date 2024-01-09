@@ -1,0 +1,10 @@
+#Using Different Models witch LangChain
+
+import os
+os.environ['HUGGINGFACEHUB_API_TOKEN'] ="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"
+from langchain import HuggingFaceHub
+
+llm = HuggingFaceHub(repo_id="google/flan-t5-base", model_kwargs={"temperature":0.9, "max_length": 64})
+prompt = "What are good fitness tips?"
+
+print(llm(prompt))
